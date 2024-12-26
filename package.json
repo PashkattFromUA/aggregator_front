@@ -1,0 +1,24 @@
+{
+  "name": "abc.next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 93.105.176.127",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^14.1.0",
+    "axios": "^1.6.2",
+    "holy-loader": "^2.2.7",
+    "i18next": "^23.7.8",
+    "i18next-resources-to-backend": "^1.2.0",
+    "next": "^14.1.0",
+    "next-i18n-router": "^5.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-i18next": "^13.5.0",
+    "react-loader-spinner": "^6.1.6"
+  }
+}

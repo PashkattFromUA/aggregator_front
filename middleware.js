@@ -1,24 +1,20 @@
 import { NextResponse } from "next/server";
-
-import { i18n } from "./i18n-config";
-
+import { i18n } from "./i18n-config"; // импорт вашей конфигурации локализации
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 function getLocale(request) {
-  // Negotiator expects plain object so we need to transform headers
+  // Transform headers to a plain object as Negotiator expects
   const negotiatorHeaders = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-ignore locales are readonly
-  const locales = i18n.locales;
+  const locales = i18n.locales; // доступ к доступным локалям
 
-  // Use negotiator and intl-localematcher to get best locale
+  // Use Negotiator and intl-localematcher to get the best locale
   let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales,
+    locales
   );
-
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+  const locale = matchLocale(languages, locales, i18n.defaultLocale); // match locale, default to i18n.defaultLocale if no match
 
   return locale;
 }
@@ -26,39 +22,26 @@ function getLocale(request) {
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
-  // // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // // If you have one
-  // if (
-  //   [
-  //     '/manifest.json',
-  //     '/favicon.ico',
-  //     // Your other files in `public`
-  //   ].includes(pathname)
-  // )
-  //   return
-
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) =>
-      !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Redirect if there is no locale
+  // If no locale found in the pathname, redirect to default locale or fallback to 'en-US' if not available
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+    const locale = i18n.locales.includes(i18n.defaultLocale)
+      ? i18n.defaultLocale
+      : "en-US"; // Fallback to 'en-US' if the default locale is not in the locales list
 
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url,
-      ),
+        request.url
+      )
     );
   }
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };

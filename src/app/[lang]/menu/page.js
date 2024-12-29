@@ -8,9 +8,11 @@ export const metadata = {
 };
 
 export default async function MenuPage(props) {
-  const fetchData = async () => {
+
+  const fetchData = async (lang) => {
     const myHeaders = new Headers();
-    myHeaders.append("Authorization", authCredit);
+    myHeaders.append("Authorization", authCredit); 
+    myHeaders.append("Accept-Language", lang);
 
     const requestOptions = {
       method: "GET",
@@ -22,6 +24,11 @@ export default async function MenuPage(props) {
         "http://localhost:8000/api/category/all",
         requestOptions
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
       console.log(data);
 
@@ -34,9 +41,8 @@ export default async function MenuPage(props) {
     }
   };
 
-  const catnames = await fetchData();
-
   const { lang } = await props.params;
+  const catnames = await fetchData(lang);
   const dictionary = await getDictionary(lang);
 
   return (

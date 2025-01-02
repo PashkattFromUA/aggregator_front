@@ -1,5 +1,5 @@
 import * as React from "react";
-import LocaleSwitcher from "../../../../components/localeSwitcher";
+import LocaleSwitcher from "../../components/localeSwitcher";
 import { getDictionary } from "../../../../getDictionaries";
 import { authCredit } from "../../../../credits";
 

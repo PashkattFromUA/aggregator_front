@@ -1,6 +1,6 @@
-import styles from "./page.module.css";
-import LocaleSwitcher from "../../../components/localeSwitcher";
+import LocaleSwitcher from "../components/localeSwitcher";
 import { getDictionary } from "../../../getDictionaries";
+import { Header } from "../components/header";
 
 export default async function Home(props) {
   const { lang } = await props.params;
@@ -8,7 +8,8 @@ export default async function Home(props) {
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className={styles.page}>
+    <div>
+      <Header />
       <LocaleSwitcher />
     </div>
   );

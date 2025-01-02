@@ -1,4 +1,5 @@
 import { i18n } from "../../../i18n-config";
+import './globals.css'
 
 export const metadata = {
   title: "i18n within app router - Vercel Examples",

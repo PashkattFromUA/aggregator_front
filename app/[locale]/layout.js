@@ -3,7 +3,6 @@ const Form = dynamic(() => import('@/components/Form/Form'));
 const Header = dynamic(() => import('@/components/Header/Header'));
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
-import { Inter } from 'next/font/google';
 import initTranslations from '../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
@@ -17,8 +16,6 @@ const i18nNamespaces = ['common'];
 export function generateStaticParams() {
   return i18nConfig.locales.map(locale => ({ locale }));
 }
-
-const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 // export async function generateMetadata({ params }) {
 //   const locale = params.locale;
@@ -81,7 +78,7 @@ export default async function RootLayout({ children, params: { locale } }) {
         namespaces={i18nNamespaces}
         locale={locale}
         resources={resources}>
-        <body className={inter.className}>
+        <body>
           <Header />
           {children}
           <Form />

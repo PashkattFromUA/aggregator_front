@@ -8,7 +8,6 @@ import styles from '@/styles/header.module.css';
 import { usePathname, useRouter } from 'next/navigation';
 import scrollTo from '@/utils/scrollTo';
 import Image from "next/image";
-import Search from "../Search/Search";
 
 const Header = () => {
 
@@ -50,21 +49,27 @@ const Header = () => {
         <header className={styles.menu}>
             <div className={styles.logonav}>
                 <Link href="/">
-                    <Image src='/images/Logo.svg' width={109} height={32} alt="ABC" priority={true} onClick={() => { setIsNavbarExpanded(false) }} />
+                    <Image src='/images/logo.svg' width={81} height={32} alt="ABC" priority={true} onClick={() => { setIsNavbarExpanded(false) }} />
                 </Link>
                 <nav className={isNavbarExpanded === true ? styles.navbarlactive : styles.navbarl}>
                     <div className={isNavbarExpanded === true ? styles.navbuttonsactive : styles.navbuttons}>
                         <Link href="/aggregator" className={currentPathname === `/${currentLocale}/aggregator` || currentPathname === `/aggregator` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             {t("aggregator")}
                         </Link>
-                        <Link href="/forpartners" className={currentPathname === `/${currentLocale}/forpartners` || currentPathname === `/forpartners` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
-                            {t("forpartners")}
+                        <Link href="/moreinfo" className={currentPathname === `/${currentLocale}/moreinfo` || currentPathname === `/moreinfo` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
+                            {t("moreinfo")}
                         </Link>
                         <Link href="/faq" className={currentPathname === `/${currentLocale}/faq` || currentPathname === `/faq` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
                             FAQ
                         </Link>
                         <Link href="/news" className={currentPathname === `/${currentLocale}/news` || currentPathname === `/news` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }}>
                             {t("news")}
+                        </Link>
+                        <Link href="/improveus" className={currentPathname === `/${currentLocale}/community` || currentPathname === `/community` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
+                            {t("community")}
+                        </Link>
+                        <Link href="/improveus" className={currentPathname === `/${currentLocale}/improveus` || currentPathname === `/improveus` ? styles.activepage : styles.nonactivepage} onClick={() => { setIsNavbarExpanded(false) }} >
+                            {t("improveus")}
                         </Link>
                     </div>
                     <button className={isNavbarExpanded === true ? styles.contactusmobileactive : styles.contactusmobile} onClick={() => handleButtonClick()}>{t("contactus")}</button>
@@ -73,6 +78,7 @@ const Header = () => {
             <div className={styles.headbuttonsmobile}>
                 <div className={styles.localisator} onClick={toggleModal}>
                     <Image src={flagsrc} width={16} loading="lazy" height={16} alt="flag" />
+                    {t('lang')}
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"
@@ -93,7 +99,7 @@ const Header = () => {
                 <button className={styles.menubutton}>
                     <Image src={menubutt} width={24} height={19} loading="lazy" alt="menu" onClick={toggleNavbar} />
                 </button>
-                <button className={styles.contactusdescktop} onClick={() => handleButtonClick()}>{t("contactus")}</button>
+                <button type="button" className={styles.contactusdescktop} onClick={() => handleButtonClick()}>{t("forpartners")}</button>
             </div>
         </header>
     )

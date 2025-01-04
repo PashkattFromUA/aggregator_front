@@ -1,31 +1,32 @@
+import { Auth } from '@/credits';
+import axios from 'axios';
 import dynamic from 'next/dynamic';
+import Categoryslider from '@/components/Categoryslider/Categoryslider'
 const Main = dynamic(() => import('@/components/Main/Main'));
 const FAQ = dynamic(() => import('@/components/FAQ/FAQ'));
-const Agregatormain = dynamic(() => import('@/components/Agregatormain/Agregatormain'));
 const Improveus = dynamic(() => import('@/components/Improveus/Improveus'), { ssr: false })
 
-// async function getLabels(lang) {
-//   const url = 'https://api.abcrypto.io/api/categories';
-//   const headers = new Headers({
-//     'App-Locale': lang,
-//   });
+async function getLabels(lang) {
+  const headers = {
+    'accept-language': lang,
+    'Authorization': Auth,
+  };
 
-//   const res = await fetch(url, { headers }); 
-
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch data');
-//   }
-
-//   return res.json();
-// }
+  try {
+    const res = await axios.get('http://localhost:8000/api/category/all', { headers });
+    return res.data;
+  } catch (error) {
+    throw new Error(`Failed to fetch data: ${error.message}`);
+  }
+}
 
 export default async function Home({ params: { locale } }) {
-  // const labels = await getLabels(locale);
+  const labels = await getLabels(locale);
 
   return (
     <main>
       <Main />
-      {/* <Agregatormain data={labels} /> */}
+      <Categoryslider data={labels}/>
       <Improveus />
       <FAQ />
     </main>

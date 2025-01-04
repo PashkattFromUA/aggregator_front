@@ -1,7 +1,7 @@
 'use client'
 
 import { React } from 'react'
-import ButtonSlider from './Buttonslider'
+import ButtonSlider from '../Categoryslider/Categoryslider'
 
 const Agregator = (props) => {
     const labels = props.data;

@@ -2,7 +2,6 @@ import { Auth } from "@/credits";
 import axios from "axios";
 import dynamic from "next/dynamic";
 import Categoryslider from "@/components/Categoryslider/Categoryslider";
-import Cardlist from "@/components/Agregator/Cardlist";
 const Main = dynamic(() => import("@/components/Main/Main"));
 const FAQ = dynamic(() => import("@/components/FAQ/FAQ"));
 const Improveus = dynamic(() => import("@/components/Improveus/Improveus"), {
@@ -42,13 +41,11 @@ async function getCards(lang) {
 export default async function Home({ params: { locale } }) {
   const labels = await getLabels(locale);
   const cards = await getCards(locale);
-  console.log(cards);
 
   return (
     <main>
       <Main />
-      <Categoryslider data={labels} />
-      <Cardlist cardsArray={cards} resetpage={1} />
+      <Categoryslider data={labels} cards={cards} />
       <Improveus />
       <FAQ />
     </main>

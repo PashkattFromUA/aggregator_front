@@ -20,5 +20,8 @@
     "react-dom": "^18",
     "react-i18next": "^13.5.0",
     "react-loader-spinner": "^6.1.6"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0"
   }
 }

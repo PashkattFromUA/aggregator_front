@@ -40,7 +40,7 @@ const CarouselInScrollContainer = (props) => {
   };
 
   return (
-    <div className={styles.paginationblock}>
+    <div className={styles.paginationblock} id="aggregator">
       <Search
         setQuery={setQuery}
         searchparams={searchparams}
@@ -99,7 +99,7 @@ const CarouselInScrollContainer = (props) => {
               d="M7.0667 12.107L7.06653 12.1068L2.28922 7.00563L7.0667 1.8943C7.3111 1.63282 7.3111 1.21481 7.0667 0.953333C6.8133 0.682222 6.39443 0.682222 6.14103 0.953333L0.933301 6.52498C0.810389 6.65648 0.75 6.82187 0.75 6.99546C0.75 7.1556 0.808409 7.33233 0.933301 7.46595L6.13874 13.0351C6.39197 13.3195 6.81297 13.3194 7.0667 13.0479C7.3111 12.7864 7.3111 12.3684 7.0667 12.107Z"
               fill="black"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
           </svg>
         </button>
@@ -119,7 +119,7 @@ const CarouselInScrollContainer = (props) => {
               d="M0.933301 1.89304L0.933468 1.89322L5.71078 6.99437L0.933301 12.1057C0.6889 12.3672 0.6889 12.7852 0.933301 13.0467C1.1867 13.3178 1.60557 13.3178 1.85897 13.0467L7.0667 7.47502C7.18961 7.34352 7.25 7.17813 7.25 7.00454C7.25 6.8444 7.19159 6.66767 7.0667 6.53405L1.86126 0.964856C1.60803 0.680488 1.18703 0.680616 0.933301 0.95207C0.6889 1.21355 0.6889 1.63156 0.933301 1.89304Z"
               fill="black"
               stroke="black"
-              stroke-width="0.5"
+              strokeWidth="0.5"
             />
           </svg>
         </button>

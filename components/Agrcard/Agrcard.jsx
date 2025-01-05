@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import styles from "@/styles/agrcard.module.css";
 import Image from "next/image";
 import GlobeIcon from "@/assets/globe.svg";
+import RatingStar from "@/assets/ratingstar.svg";
 
 const Agrcard = (props) => {
   const catslug = props.catslug;
@@ -45,10 +46,10 @@ const Agrcard = (props) => {
             target="_blank"
             rel="noreferrer"
           >
-            <Image src="/images/Star.svg" width={20} height={20} alt="Star" />
+            <RatingStar width={20} height={20} />
           </a>
           <a href={props.card.link} target="_blank" rel="noreferrer">
-            <GlobeIcon width={20} height={20} />
+            <GlobeIcon width={20} height={20}/>
           </a>
         </div>
       </div>

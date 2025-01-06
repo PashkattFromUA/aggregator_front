@@ -1,0 +1,10 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blockbot {
+  display: flex;
+  gap: 24px;
+}

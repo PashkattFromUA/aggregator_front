@@ -12,7 +12,7 @@ const Footer = (props) => {
     const sortedCategories = buttonLabels.slice().sort((a, b) => a.id - b.id);
 
     return (
-        <footer className={styles.footer}>
+        <footer className="container">
             <div className={styles.footertop}>
                 <div className={styles.footerleft}>
                     <Link href="/">

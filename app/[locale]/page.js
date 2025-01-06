@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import Categoryslider from "@/components/CategorySlider/Categoryslider";
 import { RoatingText } from "@/components/RoatingText/RoatingText";
 import { MainPageImgTextBlock } from "@/components/MainPageImgTextBlock/MainPageImgTextBlock";
+import { CategoryCardsBlock } from "@/components/CategoryCardsBlock/CategoryCardsBlock";
+import Footer from "@/components/Footer/Footer";
 const Main = dynamic(() => import("@/components/MainScreen/MainScreen"));
 const FAQ = dynamic(() => import("@/components/FAQ/FAQ"));
 const Improveus = dynamic(() => import("@/components/ImproveUs/Improveus"), {
@@ -50,6 +52,9 @@ export default async function Home({ params: { locale } }) {
       <Categoryslider data={labels} cards={cards} />
       <RoatingText />
       <MainPageImgTextBlock />
+      <CategoryCardsBlock />
+      <Main />
+      <Footer data={labels} />
     </main>
   );
 }

@@ -67,16 +67,6 @@
   justify-content: space-between;
 }
 
-.moreinfobutt {
-  padding: 12px 32px;
-  border-radius: 48px;
-  border: 1px solid var(--accent-color);
-  background-color: #f8f8f8;
-  color: #1e1e21;
-  transition: all 0.6s;
-  font-size: 14px;
-}
-
 .svgbot{
  display: flex;
  align-items: center;

@@ -35,7 +35,7 @@ const Agrcard = (props) => {
       <p className={styles.carddescriprion}>{props.card.shortDescription}</p>
       <div className={styles.cardbottom}>
         <Link href={`/${catslug}/${props.card.slug}`}>
-          <button type="button" className={styles.moreinfobutt}>
+          <button type="button" className="button">
             {t("moreinfo")}
           </button>
         </Link>

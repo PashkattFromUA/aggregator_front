@@ -3,7 +3,8 @@ import axios from "axios";
 import dynamic from "next/dynamic";
 import Categoryslider from "@/components/CategorySlider/Categoryslider";
 import { RoatingText } from "@/components/RoatingText/RoatingText";
-const Main = dynamic(() => import("@/components/Main/Main"));
+import { MainPageImgTextBlock } from "@/components/MainPageImgTextBlock/MainPageImgTextBlock";
+const Main = dynamic(() => import("@/components/MainScreen/MainScreen"));
 const FAQ = dynamic(() => import("@/components/FAQ/FAQ"));
 const Improveus = dynamic(() => import("@/components/ImproveUs/Improveus"), {
   ssr: false,
@@ -48,8 +49,7 @@ export default async function Home({ params: { locale } }) {
       <Main />
       <Categoryslider data={labels} cards={cards} />
       <RoatingText />
-      <Improveus />
-      <FAQ />
+      <MainPageImgTextBlock />
     </main>
   );
 }

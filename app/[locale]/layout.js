@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-const Form = dynamic(() => import('@/components/Form/Form'));
 const Header = dynamic(() => import('@/components/Header/Header'));
 import i18nConfig from '@/i18nConfig';
 import { dir } from 'i18next';
@@ -81,7 +80,6 @@ export default async function RootLayout({ children, params: { locale } }) {
         <body>
           <Header />
           {children}
-          <Form />
           {/* <Footer data={catnamesArray} /> */}
           <ScrollToTopButt />
           <HolyLoader color="linear-gradient(125deg, #FC6E49 0%, #D368A9 23.67%, #825DE1 45.42%, #4F77EF 71.83%, #53C6E3 100%)" height="4px" />

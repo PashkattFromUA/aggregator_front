@@ -49,7 +49,7 @@ const CarouselInScrollContainer = (props) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className={styles.paginationblock} id="aggregator">
         <Search
           setQuery={setQuery}

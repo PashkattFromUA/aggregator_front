@@ -2,7 +2,7 @@ import { Suspense, lazy } from 'react';
 import initTranslations from '../../i18n';
 import dynamic from 'next/dynamic';
 const Blocktitle = dynamic(() => import('@/components/Blocktitle/Blocktitle'));
-const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
+const Screensblock = dynamic(() => import('@/components/ScreensBlock/ScreensBlock'));
 const Cardlist = lazy(() => import('@/components/Agregator/Cardlist'));
 import { notFound } from 'next/navigation';
 import Loading from '../loading';

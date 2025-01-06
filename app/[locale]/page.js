@@ -1,10 +1,11 @@
 import { Auth } from "@/credits";
 import axios from "axios";
 import dynamic from "next/dynamic";
-import Categoryslider from "@/components/Categoryslider/Categoryslider";
+import Categoryslider from "@/components/CategorySlider/Categoryslider";
+import { RoatingText } from "@/components/RoatingText/RoatingText";
 const Main = dynamic(() => import("@/components/Main/Main"));
 const FAQ = dynamic(() => import("@/components/FAQ/FAQ"));
-const Improveus = dynamic(() => import("@/components/Improveus/Improveus"), {
+const Improveus = dynamic(() => import("@/components/ImproveUs/Improveus"), {
   ssr: false,
 });
 
@@ -46,6 +47,7 @@ export default async function Home({ params: { locale } }) {
     <main>
       <Main />
       <Categoryslider data={labels} cards={cards} />
+      <RoatingText />
       <Improveus />
       <FAQ />
     </main>

@@ -1,6 +1,6 @@
 import initTranslations from '../../i18n';
 import dynamic from 'next/dynamic';
-const Screensblock = dynamic(() => import('@/components/Screensblock/Screensblock'));
+const Screensblock = dynamic(() => import('@/components/ScreensBlock/ScreensBlock'));
 const Sitemapblock = dynamic(() => import('@/components/Sitemapblock/Sitemapblock'));
 
 const i18nNamespaces = ['common'];

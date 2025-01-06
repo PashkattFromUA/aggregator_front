@@ -6,7 +6,7 @@ import { dir } from 'i18next';
 import initTranslations from '../i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
 const Footer = dynamic(() => import('@/components/Footer/Footer'));
-const ScrollToTopButt = dynamic(() => import('@/components/Scrolltotopbutt/Scrolltotopbutt'));
+const ScrollToTopButt = dynamic(() => import('@/components/ScrollToTopButt/ScrollToTopButt'));
 import '@/styles/global.css'
 import HolyLoader from "holy-loader";
 import { GoogleAnalytics } from '@next/third-parties/google'

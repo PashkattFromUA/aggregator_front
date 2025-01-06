@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Agrcard from "@/components/Agrcard/Agrcard";
 import styles from "@/styles/cardlist.module.css";
-import PaginationButtons from "../Paginatedagregator/Paginationbuttons";
+import PaginationButtons from "../PaginationButtons/PaginationButtons";
 
 const Cardlist = (props) => {
   const cards = props.cardsArray;
@@ -12,7 +12,6 @@ const Cardlist = (props) => {
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
-  const sortedCards = cards.slice().sort((a, b) => a.id - b.id);
   const catslug = props.catslug;
 
   const scrollTo = (section) => {

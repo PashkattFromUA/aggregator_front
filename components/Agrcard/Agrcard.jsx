@@ -49,7 +49,7 @@ const Agrcard = (props) => {
             <RatingStar width={20} height={20} />
           </a>
           <a href={props.card.link} target="_blank" rel="noreferrer">
-            <GlobeIcon width={20} height={20}/>
+            <GlobeIcon width={20} height={20} />
           </a>
         </div>
       </div>

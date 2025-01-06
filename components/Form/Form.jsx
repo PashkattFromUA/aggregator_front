@@ -6,8 +6,8 @@ import Blocktitle from '@/components/Blocktitle/Blocktitle'
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'react-i18next';
-const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
-const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
+const Feedbackmodal = dynamic(() => import('../FeedbackModal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../ErrorModal/Errormodal'));
 
 const Form = () => {
 

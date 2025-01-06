@@ -1,4 +1,4 @@
-import Newsblock from "@/components/Newsblock/Newsblock"
+import Newsblock from "@/components/NewsBlock/Newsblock"
 
 export async function generateMetadata() {
 

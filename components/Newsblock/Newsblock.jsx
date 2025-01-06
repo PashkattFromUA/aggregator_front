@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
-const Newsmodal = dynamic(() => import('@/components/Newsblock/Newsmodal/Newsmodal'), { ssr: false })
+const Newsmodal = dynamic(() => import('@/components/NewsBlock/Newsmodal/Newsmodal'), { ssr: false })
 import styles from '@/styles/newspage.module.css'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
-const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
+const Feedbackmodal = dynamic(() => import('../FeedbackModal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../ErrorModal/Errormodal'));
 
 const Newsblock = () => {
 

@@ -1,13 +1,13 @@
 'use client'
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
-const Improveusmodal = dynamic(() => import('@/components/Improveus/Improveusmodal/Improveusmodal'), { ssr: false })
+const Improveusmodal = dynamic(() => import('@/components/ImproveUs/Improveusmodal/Improveusmodal'), { ssr: false })
 import { useTranslation } from 'react-i18next';
 import styles from '@/styles/improveus.module.css'
 import improveusimg from '@/public/images/improveus.png'
 import Image from 'next/image';
-const Feedbackmodal = dynamic(() => import('../Feedbackmodal/Feedbackmodal'));
-const Errormodal = dynamic(() => import('../Errormodal/Errormodal'));
+const Feedbackmodal = dynamic(() => import('../FeedbackModal/Feedbackmodal'));
+const Errormodal = dynamic(() => import('../ErrorModal/Errormodal'));
 
 const Improveus = () => {
   const { t } = useTranslation();

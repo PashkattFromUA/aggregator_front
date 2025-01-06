@@ -1,83 +1,51 @@
 .improveus {
   display: flex;
+  gap: 70px;
   justify-content: space-between;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 131px;
+  padding: 40px 50px;
+  border-radius: 60px;
+  background: var(--gradient);
+  align-items: center;
+}
+
+.improveleft{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .improveleft h2 {
-  color: #000;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 63px;
+  color: var(--accent-color);
+  font-size: 43px;
+  font-weight: 200;
   letter-spacing: 0.15px;
   margin: 0;
 }
 
 .improveleft p {
-  color: #5d5d5d;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
+  color: var(--no-accent-color);
+  font-weight: 300;
   line-height: 1.5;
-  width: 511px;
   letter-spacing: 0.15px;
-  margin-top: 24px;
-  margin-bottom: 32px;
 }
 
-.improvebutt {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-
-.button1 {
-  display: flex;
-  gap: 16px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  background: #000;
-  border-style: none;
-  align-items: center;
-  color: #fff;
+.button {
+  padding: 24px 32px;
+  border-radius: 48px;
+  border: 1px solid var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+  transition: all 0.3s;
   font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  transition: all 0.6s;
-}
-
-.button2 {
-  color: #000;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  border-bottom: 2px solid;
-  cursor: pointer;
-}
-
-.improveright {
-  width: 616px;
-  height: 472px;
-  border-radius: 50px;
-}
-
-.improveright img {
-  width: 616px;
-  height: 472px;
+  font-weight: 300;
+  white-space: nowrap;
 }
 
 .improvebuttmobile {
   display: none;
 }
 
-@media(hover:hover){
+@media (hover: hover) {
   .button1:hover {
     background: #282828;
     cursor: pointer;

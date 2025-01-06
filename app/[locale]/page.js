@@ -55,6 +55,7 @@ export default async function Home({ params: { locale } }) {
       <MainPageImgTextBlock />
       <CategoryCardsBlock />
       <SmallCardsBlock cards={cards} />
+      <Improveus />
       <Footer data={labels} />
     </main>
   );

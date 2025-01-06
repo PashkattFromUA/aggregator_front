@@ -6,6 +6,7 @@ import { RoatingText } from "@/components/RoatingText/RoatingText";
 import { MainPageImgTextBlock } from "@/components/MainPageImgTextBlock/MainPageImgTextBlock";
 import { CategoryCardsBlock } from "@/components/CategoryCardsBlock/CategoryCardsBlock";
 import Footer from "@/components/Footer/Footer";
+import { SmallCardsBlock } from "@/components/SmallCardsBlock/SmallCardsBlock";
 const Main = dynamic(() => import("@/components/MainScreen/MainScreen"));
 const FAQ = dynamic(() => import("@/components/FAQ/FAQ"));
 const Improveus = dynamic(() => import("@/components/ImproveUs/Improveus"), {
@@ -53,7 +54,7 @@ export default async function Home({ params: { locale } }) {
       <RoatingText />
       <MainPageImgTextBlock />
       <CategoryCardsBlock />
-      <Main />
+      <SmallCardsBlock cards={cards} />
       <Footer data={labels} />
     </main>
   );

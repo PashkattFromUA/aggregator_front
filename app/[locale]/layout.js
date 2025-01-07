@@ -1,19 +1,21 @@
-import dynamic from 'next/dynamic';
-const Header = dynamic(() => import('@/components/Header/Header'));
-import i18nConfig from '@/i18nConfig';
-import { dir } from 'i18next';
-import initTranslations from '../i18n';
-import TranslationsProvider from '@/components/TranslationsProvider';
-const Footer = dynamic(() => import('@/components/Footer/Footer'));
-const ScrollToTopButt = dynamic(() => import('@/components/ScrollToTopButt/ScrollToTopButt'));
-import '@/styles/global.css'
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("@/components/Header/Header"));
+import i18nConfig from "@/i18nConfig";
+import { dir } from "i18next";
+import initTranslations from "../i18n";
+import TranslationsProvider from "@/components/TranslationsProvider";
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
+const ScrollToTopButt = dynamic(() =>
+  import("@/components/ScrollToTopButt/ScrollToTopButt")
+);
+import "@/styles/global.css";
 import HolyLoader from "holy-loader";
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from "@next/third-parties/google";
 
-const i18nNamespaces = ['common'];
+const i18nNamespaces = ["common"];
 
 export function generateStaticParams() {
-  return i18nConfig.locales.map(locale => ({ locale }));
+  return i18nConfig.locales.map((locale) => ({ locale }));
 }
 
 // export async function generateMetadata({ params }) {
@@ -66,23 +68,25 @@ export default async function RootLayout({ children, params: { locale } }) {
   //   id: item.data.id,
   //   slug: item.data.slug,
   //   name: item.data.name,
-  // })); 
-
+  // }));
 
   return (
     <html lang={locale} dir={dir(locale)}>
-      <head>
-      </head>
+      <head></head>
       <TranslationsProvider
         namespaces={i18nNamespaces}
         locale={locale}
-        resources={resources}>
+        resources={resources}
+      >
         <body>
           <Header />
           {children}
           {/* <Footer data={catnamesArray} /> */}
           <ScrollToTopButt />
-          <HolyLoader color="linear-gradient(125deg, #FC6E49 0%, #D368A9 23.67%, #825DE1 45.42%, #4F77EF 71.83%, #53C6E3 100%)" height="4px" />
+          <HolyLoader
+            color="linear-gradient(125deg, #FC6E49 0%, #D368A9 23.67%, #825DE1 45.42%, #4F77EF 71.83%, #53C6E3 100%)"
+            height="4px"
+          />
         </body>
         <GoogleAnalytics gaId="G-R7WJWEWG9V" />
       </TranslationsProvider>

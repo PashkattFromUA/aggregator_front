@@ -1,0 +1,21 @@
+.tabeven {
+  background: var(--secondary-bg-color);
+  display: flex;
+  gap: 70px;
+  padding: 40px 50px 120px;
+  border-radius: 60px 60px 0 0;
+  margin-bottom: -50px;
+}
+.tabodd {
+  background: var(--gradient);
+  display: flex;
+  gap: 70px;
+  padding: 40px 50px 120px;
+  border-radius: 60px 60px 0 0;
+  margin-bottom: -50px;
+}
+
+.cardsSide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

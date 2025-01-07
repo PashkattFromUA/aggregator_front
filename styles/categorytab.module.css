@@ -1,4 +1,6 @@
 .tabeven {
+  margin: 0 auto;
+  max-width: 1240px;
   background: var(--secondary-bg-color);
   display: flex;
   gap: 70px;
@@ -7,6 +9,8 @@
   margin-bottom: -50px;
 }
 .tabodd {
+  max-width: 1240px;
+  margin: 0 auto;
   background: var(--gradient);
   display: flex;
   gap: 70px;

@@ -1,38 +1,37 @@
 "use client";
 
-import styles from "@/styles/categorytabsblock.module.css";
 import { CategoryTab } from "../CategoryTab/CategoryTab";
-import {
-  Animator,
-  Fade,
-  ScrollContainer,
-  ScrollPage,
-  Move,
-  Sticky,
-  batch
-} from "react-scroll-motion";
+import { motion } from "framer-motion";
 
 export const CategoryTabsBlock = (props) => {
-  const FadeUp = batch(Fade(), Move(), Sticky());
   const categories = props.data;
   const cards = props.cards;
+
+  // Варианты анимации для сворачивания/раскрытия по оси Y
+  const variants = {
+    hidden: { opacity: 0, scaleY: 0 }, // Сжимаем и скрываем элемент
+    visible: { opacity: 1, scaleY: 1 }, // Открываем элемент, делаем видимым
+  };
+
   return (
-    <div className="container">
-      <ScrollContainer>
-        {categories.map((category, index) => (
-          <ScrollPage page={index} key={category.id}>
-            <Animator animation={FadeUp} key={category.id}>
-              <CategoryTab
-                key={category.id}
-                index={index}
-                catname={category.name}
-                catdescription={category.description}
-                cards={cards.filter((card) => card.catslug === category.slug)}
-              />
-            </Animator>
-          </ScrollPage>
-        ))}
-      </ScrollContainer>
+    <div style={{ overflowY: "scroll", height: "1000px" }}>
+      {categories.map((category, index) => (
+        <motion.div
+          key={category.id}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, margin: "0px 0px -100px 0px" }} // Элемент начинает анимацию перед выходом из экрана
+          transition={{ type: "spring", stiffness: 100 }}
+          variants={variants}
+        >
+          <CategoryTab
+            index={index}
+            catname={category.name}
+            catdescription={category.description}
+            cards={cards.filter((card) => card.catslug === category.slug)}
+          />
+        </motion.div>
+      ))}
     </div>
   );
 };
